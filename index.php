@@ -36,9 +36,10 @@ if($_POST){
         $Date1  = $_POST['Date1'];
         $Date2  = $_POST['Date2'];
         $Date3  = $_POST['Date3'];
-        $purpose  = $_POST['purpose'];
-        $checkbox = $_POST['checkbox0'];
-        $checkbox1 = $_POST['checkbox1'];
+        $Time2  = $_POST['Time2'];
+        $Time3  = $_POST['Time3'];
+        $RadioButton0 = $_POST['RadioButton0'];
+        $RadioButton1 = $_POST['RadioButton1'];
         $msg = $_POST['msg'];
         
 
@@ -58,9 +59,10 @@ if($_POST){
             $form->Date1 = $Date1 ;
             $form->Date2 = $Date2 ;
             $form->Date3 = $Date3 ;
-            $form->Textbox2 = $purpose ;
-            $form->Checkbox1 = $checkbox;
-            $form->Checkbox2 = $checkbox1;
+            $form->Time2 = $Time2 ;
+            $form->Time3 = $Time3 ;
+            $form->RadioButton0 = $RadioButton0;
+            $form->RadioButton1 = $RadioButton1;
             $form->TextArea0 = $msg;
             $result = $form->asXML();
             $client->invokeProcess($oid, $eid, $uid, $process, $result, "伺服器代管申請作業");
@@ -151,35 +153,37 @@ if($_POST){
           <label>刊登時間</label><br>
           <div class="row">
               <div class="col-md-5 mb-3">
-                  <input type="datetime-local" name="Date2"  class="form-control">
+                  <input type="date" name="Date2"  class="form-control">
+                  <input type="time" name="Time2"  class="form-control">
               </div>
               <div class="col-md-1 mb-3">
               <label-align="center">至</label>
               </div>
               <div class="col-md-5 mb-3">
-                  <input type="datetime-local" name="Date3"  class="form-control">
+                  <input type="date" name="Date3"  class="form-control">
+                  <input type="time" name="Time3"  class="form-control">
               </div>
           </div>
 
           <div class="row">
 			  <div class="col-md-12 mb-3">
 				  <label >申請事項 </label><br>
-				  <label ><input name="checkbox0" type="Radio" value="1" >Banner(1004x300像素)</label >
-				  <label ><input name="checkbox0" type="Radio" value="2" >跑馬燈</label >
-				  <label ><input name="checkbox0" type="Radio" value="3" >快速連結</label >
-				  <label ><input name="checkbox0" type="Radio" value="4" >網頁內容</label >
-				  <label ><input name="checkbox0" type="Radio" value="5" >網頁版面</label >
-				  <label ><input name="checkbox0" type="Radio" value="6" >增建帳號</label >
-				  <label ><input name="checkbox0" type="Radio" value="7" >其他</label >
+				  <label ><input name="RadioButton0" type="Radio" value="1" >Banner(1004x300像素)</label >
+				  <label ><input name="RadioButton0" type="Radio" value="2" >跑馬燈</label >
+				  <label ><input name="RadioButton0" type="Radio" value="3" >快速連結</label >
+				  <label ><input name="RadioButton0" type="Radio" value="4" >網頁內容</label >
+				  <label ><input name="RadioButton0" type="Radio" value="5" >網頁版面</label >
+				  <label ><input name="RadioButton0" type="Radio" value="6" >增建帳號</label >
+				  <label ><input name="RadioButton0" type="Radio" value="7" >其他</label >
           </div>
           </div>
 
 <div class="row">
 			  <div class="col-md-12 mb-3">
 				  <label >協助事項 </label><br>
-				  <label ><input name="checkbox1" type="Radio" value="1" >新增</label >
-				  <label ><input name="checkbox1" type="Radio" value="2" >修改</label >
-				  <label ><input name="checkbox1" type="Radio" value="3" >刪除</label>
+				  <label ><input name="RadioButton1" type="Radio" value="1" >新增</label >
+				  <label ><input name="RadioButton1" type="Radio" value="2" >修改</label >
+				  <label ><input name="RadioButton1" type="Radio" value="3" >刪除</label>
           </div>
           </div>
 
